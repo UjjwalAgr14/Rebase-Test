@@ -1,0 +1,28 @@
+name: Automated Merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "UjjwalAgr14"
+          git config --global user.email "ujjwal@recruitcrm.io"
+          git remote set-url origin https://github.com/UjjwalAgr14/Automated-Rebase-Test.git
+          git fetch origin dev
+          git checkout dev
+
+      - name: Merge changes from main into dev with conflict resolution
+        run: git merge origin/main 
+
+      - name: Push the merge result to dev branch
+        run: git push origin HEAD:dev
