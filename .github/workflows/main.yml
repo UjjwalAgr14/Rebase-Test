@@ -17,7 +17,7 @@ jobs:
         run: |
           git config --global user.name "UjjwalAgr14"
           git config --global user.email "ujjwal@recruitcrm.io"
-          git remote set-url origin https://github.com/UjjwalAgr14/Automated-Rebase-Test.git
+          git remote set-url origin https://github.com/UjjwalAgr14/Rebase-Test.git
           git fetch origin dev
           git checkout dev
 
